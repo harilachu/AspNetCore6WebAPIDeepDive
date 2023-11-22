@@ -28,7 +28,7 @@ public class AuthorCollectionsController : ControllerBase
     // key1=value1,key2=value2
 
     [HttpGet("({authorIds})", Name = "GetAuthorCollection")]
-    public async Task<ActionResult<IEnumerable<AuthorForCreationDto>>> 
+    public async Task<ActionResult<IEnumerable<AuthorDto>>> 
         GetAuthorCollection(
                 [ModelBinder(BinderType = typeof(ArrayModelBinder))]
                 [FromRoute] IEnumerable<Guid> authorIds)
